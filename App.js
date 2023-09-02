@@ -48,11 +48,11 @@ export default function App() {
       {
         text: `I'm Sure`,
         style: 'destructive',
-        onPress: () => {
+        onPress: async () => {
           const newToDos = { ...toDos };
           delete newToDos[key];
           setToDos(newToDos);
-          saveToDos(newToDos);
+          await saveToDos(newToDos);
         },
       },
     ]);
